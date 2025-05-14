@@ -13,6 +13,7 @@ const teachers = [
 console.log(teachers);
 console.log(teachers.length);
 
+// usando il ciclo for
 
 const reversedTeachers = [];  //array(string)
 for (let i = 0; i < teachers.length; i++){
@@ -25,6 +26,12 @@ for (let i = 0; i < teachers.length; i++){
 console.log(reversedTeachers);
 
 
+/*
+// usando reverse
+
+const reversedTeachers = teachers.reverse()
+console.log(reversedTeachers)
+*/
 
 
 
@@ -33,6 +40,7 @@ console.log(reversedTeachers);
 // con un nome di lunghezza maggiore o uguale a 5 caratteri
 const longNames = [];
 
+// usando ciclo for
 
 for (let i = 0; i < teachers.length; i++) {
   const teacher = teachers[i];  //string
@@ -44,8 +52,8 @@ for (let i = 0; i < teachers.length; i++) {
 }
 console.log(longNames);
 
-
-/* togliendo per renderlo più compatto
+/* 
+// togliendo righe per renderlo più compatto
 
 for (let i = 0; i < teachers.length; i++) {
   if (teachers[i].length >= 5) {
@@ -55,7 +63,8 @@ for (let i = 0; i < teachers.length; i++) {
 console.log(longNames);
 */
 
-/* usando il for...of
+/* 
+// usando il for...of
 
 for (teacher of teachers) {
   if (teacher.length >= 5) {
@@ -74,9 +83,18 @@ console.log(longNames);
 
 // 3. Rimuovi 'Ed' dall'array teachers
 
-const EdIndex = null;
+// usando ciclo for
 
 
+/*
+// usando splice
+
+const EdIndex = teachers.indexOf('Ed');
+// console.log(EdIndex);
+const removeItem = teachers.splice(EdIndex, 1);
+// console.log(removeItem);
+console.log(teachers);
+*/
 
 
 
@@ -94,7 +112,16 @@ console.log(isFabioPresent);
 
 
 
-
-
 // 5. Unisci tutti gli insegnanti nell'array teachers in una stringa  separata da virgole e salvala nella variabile teachersString
-const teachersString =  null;
+const teachersString = null;
+
+
+
+
+
+/*
+// usando join
+
+const teachersString = teachers.join(', ');
+console.log(teachersString)
+*/
