@@ -84,7 +84,18 @@ console.log(longNames);
 // 3. Rimuovi 'Ed' dall'array teachers
 
 // usando ciclo for
+let index = 0
+for (let i = 0; i < teachers.length; i++) {
+  const teacher = teachers[i];  //string
+  console.log(i, teacher);
 
+  if (teacher !== 'Ed') {
+    console.log(teacher)
+    teachers[index] = teacher;
+    index++ 
+  }
+}
+console.log(teachers);
 
 /*
 // usando splice
