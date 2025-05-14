@@ -21,7 +21,7 @@ for (let i = 0; i < teachers.length; i++){
   // console.log(i, teacher);
   const reversedTeacher = teachers[(teachers.length - 1) - i]   //string
   // console.log(reversedTeacher);
-  reversedTeachers.push(reversedTeacher)
+  reversedTeachers.push(reversedTeacher);
 };
 console.log(reversedTeachers);
 
@@ -29,8 +29,8 @@ console.log(reversedTeachers);
 /*
 // usando reverse
 
-const reversedTeachers = teachers.reverse()
-console.log(reversedTeachers)
+const reversedTeachers = teachers.reverse();
+console.log(reversedTeachers);
 */
 
 
@@ -45,9 +45,10 @@ const longNames = [];
 for (let i = 0; i < teachers.length; i++) {
   const teacher = teachers[i];  //string
   // console.log(i, teacher);
+
   if (teacher.length >= 5) {
     // console.log(teacher)
-    longNames.push(teacher)
+    longNames.push(teacher);
   }
 }
 console.log(longNames);
@@ -56,6 +57,7 @@ console.log(longNames);
 // togliendo righe per renderlo più compatto
 
 for (let i = 0; i < teachers.length; i++) {
+
   if (teachers[i].length >= 5) {
     longNames.push(teachers[i])
   }
@@ -67,8 +69,9 @@ console.log(longNames);
 // usando il for...of
 
 for (teacher of teachers) {
+
   if (teacher.length >= 5) {
-    longNames.push(teacher)
+    longNames.push(teacher);
   }
 }
 console.log(longNames);
@@ -87,14 +90,15 @@ console.log(longNames);
 let index = 0
 for (let i = 0; i < teachers.length; i++) {
   const teacher = teachers[i];  //string
-  console.log(i, teacher);
+  // console.log(i, teacher);
 
   if (teacher !== 'Ed') {
-    console.log(teacher)
+    // console.log(teacher);
     teachers[index] = teacher;
     index++ 
   }
 }
+teachers.pop()
 console.log(teachers);
 
 /*
@@ -114,25 +118,52 @@ console.log(teachers);
 // 4. Verifica se 'Fabio' è presente nell'array teachers
 // e salva il risultato nella variabile isFabioPresent
 
-// const isFabioPresent = teachers.indexOf('Fabio')   //number
-const isFabioPresent = teachers.indexOf('Fabio') !== -1;  //boolean
+// con let al posto di const e ciclo for
+
+let isFabioPresent = '';  //string
+
+for (let i = 0; i < teachers.length; i++) {
+  const teacher = teachers[i];  //string
+  // console.log(i, teacher);
+
+  if (teacher === 'Fabio') {
+    isFabioPresent = teacher === 'Fabio';
+  }
+}
 console.log(isFabioPresent);
 
+/*
+// con metodo compatto e const
 
+// const isFabioPresent = teachers.indexOf('Fabio');   //number
+// const isFabioPresent = teachers.indexOf('Fabio') !== -1;  //boolean
+// console.log(isFabioPresent);
+*/
 
 
 
 
 // 5. Unisci tutti gli insegnanti nell'array teachers in una stringa  separata da virgole e salvala nella variabile teachersString
-const teachersString = null;
 
+// usando il let al posto del const e il ciclo for
+let teachersString = '';  // string
 
+for (let i = 0; i < teachers.length; i++) {
+  const teacher = teachers[i];  //string
+  // console.log(i, teacher);
 
+  if (i === 0) {
+    teachersString += teacher;
+  } else {
+    teachersString += ', ' + teacher;
+  }
+}
+console.log(teachersString);
 
 
 /*
 // usando join
 
-const teachersString = teachers.join(', ');
+const teachersString = teachers.join(', ');  //string
 console.log(teachersString)
 */
